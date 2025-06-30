@@ -1,0 +1,26 @@
+@{
+    ViewData["Title"] = "Conversión de Zona Horaria";
+}
+
+<h2>Convertir Fecha Actual a Otra Zona</h2>
+
+<form method="post" asp-action="ConvertTime">
+    <div class="form-group">
+        <label>Zona Horaria:</label>
+        <select name="timeZoneId" class="form-control" required>
+            <option value="UTC">UTC</option>
+            <option value="SA Pacific Standard Time">Ecuador (SA Pacific)</option>
+            <option value="Eastern Standard Time">EE.UU. Este</option>
+            <option value="Central Europe Standard Time">Europa Central</option>
+        </select>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Convertir</button>
+</form>
+
+@if (ViewBag.ConvertedDate != null)
+{
+    <div class="alert alert-success mt-4">
+        Fecha convertida: <strong>@ViewBag.ConvertedDate</strong>
+    </div>
+}

@@ -1,0 +1,28 @@
+@model List<DateCoreApp.ViewModels.DateLogViewModel>
+
+<h2>Historial de acciones</h2>
+
+<a href="/DateLogs/Create" class="btn btn-primary mb-3">Registrar nueva acción</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Acción</th>
+            <th>Fecha registrada</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var log in Model)
+        {
+            <tr>
+                <td>@log.Action</td>
+                <td>@log.RegisteredAtFormatted</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="mt-3">
+    <a href="/DateLogs/Diff" class="btn btn-outline-dark">Diferencia entre Fechas</a>
+    <a href="/DateLogs/ConvertTime" class="btn btn-outline-dark">Conversión de Zona Horaria</a>
+</div>

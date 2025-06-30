@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "Diferencia entre Fechas";
+}
+
+<h2>Calcular diferencia entre dos fechas</h2>
+
+<form method="post" asp-action="Diff">
+    <div class="form-group">
+        <label>Fecha Inicial:</label>
+        <input type="date" name="fromDate" class="form-control" required />
+    </div>
+    <div class="form-group mt-3">
+        <label>Fecha Final:</label>
+        <input type="date" name="toDate" class="form-control" required />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Calcular</button>
+</form>
+
+@if (ViewBag.DaysBetween != null)
+{
+    <div class="alert alert-info mt-4">
+        Días de diferencia: <strong>@ViewBag.DaysBetween</strong>
+    </div>
+}

@@ -1,0 +1,33 @@
+@{
+    ViewData["Title"] = "Registrar Acción";
+}
+
+<h2>Registrar nueva acción</h2>
+
+<!-- Mensaje de éxito -->
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["Success"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<!-- Mensaje de error -->
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["Error"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<form method="post">
+    <div class="form-group">
+        <label for="action">Descripción:</label>
+        <input type="text" class="form-control" name="action" id="action" required placeholder="Ingrese la descripción de la acción" />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-success">Guardar</button>
+    <a href="/DateLogs" class="btn btn-secondary">Cancelar</a>
+</form>
